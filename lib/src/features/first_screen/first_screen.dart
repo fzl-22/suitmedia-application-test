@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:suitmedia_application_test/src/core/utils/palindrome.dart';
-import 'package:suitmedia_application_test/src/core/validator/validator.dart';
+import 'package:suitmedia_application_test/src/core/utils/validator.dart';
 import 'package:suitmedia_application_test/src/features/common/widgets/action_button.dart';
 import 'package:suitmedia_application_test/src/features/first_screen/widgets/container/profile_container.dart';
 import 'package:suitmedia_application_test/src/features/first_screen/widgets/dialog/palindrome_dialog.dart';
