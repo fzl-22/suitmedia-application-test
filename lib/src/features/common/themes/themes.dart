@@ -14,8 +14,16 @@ class AppTheme {
         fontSize: 18,
         fontWeight: FontWeight.w600,
       ),
+      titleMedium: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      ),
       bodyMedium: TextStyle(
         fontSize: 12,
+        fontWeight: FontWeight.normal,
+      ),
+      bodySmall: TextStyle(
+        fontSize: 10,
         fontWeight: FontWeight.normal,
       ),
       labelLarge: TextStyle(
