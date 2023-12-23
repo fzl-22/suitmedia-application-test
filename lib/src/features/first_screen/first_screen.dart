@@ -73,6 +73,13 @@ class _FirstScreenState extends State<FirstScreen> {
   }
 
   @override
+  void dispose() {
+    _nameController.dispose();
+    _palindromeController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
