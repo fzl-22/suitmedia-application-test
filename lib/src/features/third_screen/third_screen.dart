@@ -39,6 +39,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
   @override
   void initState() {
     _pageNumber = 1;
+    _perPageNumber = 10;
     _isLoading = false;
     _isBottomLoading = false;
     _bottomLoadingError = false;
@@ -128,6 +129,15 @@ class _ThirdScreenState extends State<ThirdScreen> {
     }
   }
 
+  Widget _buildUserContainer(User user) {
+    return UserContainer(
+      user: user,
+      onTap: () {
+        Navigator.of(context).pop("${user.firstName} ${user.lastName}");
+      },
+    );
+  }
+
   @override
   void dispose() {
     _scrollController.dispose();
@@ -162,13 +172,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         if (index < _userProfiles.length) {
-                          return UserContainer(
-                            user: _userProfiles[index],
-                            onTap: () {
-                              Navigator.of(context).pop(
-                                  "${_userProfiles[index].firstName} ${_userProfiles[index].lastName}");
-                            },
-                          );
+                          return _buildUserContainer(_userProfiles[index]);
                         } else if (_bottomLoadingError) {
                           return const Center(
                             child: Text("Error loading more data."),
