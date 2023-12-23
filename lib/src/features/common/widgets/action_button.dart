@@ -23,6 +23,7 @@ class ActionButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
+        textStyle: Theme.of(context).textTheme.labelLarge,
       ),
       onPressed: onPressed,
       child: Text(text),
