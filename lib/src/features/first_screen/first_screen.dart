@@ -7,6 +7,22 @@ import 'package:suitmedia_application_test/src/features/first_screen/widgets/dia
 import 'package:suitmedia_application_test/src/features/first_screen/widgets/field/text_input_field.dart';
 import 'package:suitmedia_application_test/src/features/second_screen/second_screen.dart';
 
+/// FirstScreen Class
+///
+/// The first screen of the application according to the task requirements, that is:
+///   a. It has two inputTexts and two buttons.
+///   b. One inputText for name input and the other for input sentence text,
+///     to check whether the sentence is palindrome or not.
+///       Example :
+///         e.g isPalindrome(“kasur rusak”) -> true
+///         e.g isPalindrome(“step on no pets”) -> true
+///         e.g isPalindrome(“put it up”) -> true
+///         e.g isPalindrome(“suitmedia”) -> false
+///   c. A button with a “Check” title below the inputTexts
+///   d. Show as dialog with message “isPalindrome” if it’s palindrome
+///      and message “not palindrome” if it’s not palindrome when clicking the button check
+///   e. And a button with a “Next” title below the Check Button.
+///   f. Go to the Second Screen when clicking the Next button.
 class FirstScreen extends StatefulWidget {
   const FirstScreen({super.key});
 
@@ -21,7 +37,8 @@ class _FirstScreenState extends State<FirstScreen> {
   final GlobalKey<FormFieldState> _palindromeFieldKey =
       GlobalKey<FormFieldState>();
 
-  void submitName() {
+  /// Callback function triggered when the user submits the name input.
+  void onSubmitName() {
     _nameFieldKey.currentState!.save();
 
     if (!_nameFieldKey.currentState!.validate()) {
@@ -35,7 +52,8 @@ class _FirstScreenState extends State<FirstScreen> {
     );
   }
 
-  void submitPalindrome() {
+  /// Callback function triggered when the user submits the palindrome input.
+  void onSubmitPalindrome() {
     _palindromeFieldKey.currentState!.save();
 
     if (!_palindromeFieldKey.currentState!.validate()) {
@@ -93,12 +111,12 @@ class _FirstScreenState extends State<FirstScreen> {
                 ),
                 const SizedBox(height: 48),
                 ActionButton(
-                  onPressed: submitPalindrome,
+                  onPressed: onSubmitPalindrome,
                   text: "CHECK",
                 ),
                 const SizedBox(height: 16),
                 ActionButton(
-                  onPressed: submitName,
+                  onPressed: onSubmitName,
                   text: "NEXT",
                 ),
               ],

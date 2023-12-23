@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
+/// TextInputField Class
+///
+/// The `TextInputField` widget is a widget based on [TextFormField] widget.
+/// It provides a style for each state of base widget for more adaptability.
 class TextInputField extends StatelessWidget {
+  /// Constructor for `TextInputField`.
+  ///
+  /// Parameters:
+  ///   - `formKey`: A global key that uniquely identifies the associated form field.
+  ///   - `controller`: The controller for the text field, managing the input text.
+  ///   - `hintText`: The hint text displayed in the input field before the user enters text.
+  ///   - `validator`: A function that validates the user's input and returns an error message if invalid.
   const TextInputField({
     super.key,
     required this.formKey,
@@ -9,7 +20,7 @@ class TextInputField extends StatelessWidget {
     required this.validator,
   });
 
-  final GlobalKey<FormFieldState> formKey ;
+  final GlobalKey<FormFieldState> formKey;
   final TextEditingController controller;
   final String hintText;
   final String? Function(String?)? validator;

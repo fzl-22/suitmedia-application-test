@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:suitmedia_application_test/src/core/models/user.dart';
 
+/// UserContainer Class
+///
+/// The `UserContainer` is a feature-specific widget of [ThirdScreen] to displaying
+/// [User] informations.
 class UserContainer extends StatelessWidget {
+  /// Constructor for `UserContainer`.
+  ///
+  /// Parameters:
+  ///   - `user`: An instance of the [User] model containing user information.
+  ///   - `onTap`: A callback function triggered when the user taps on the container.
   const UserContainer({
     super.key,
     required this.user,

@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
+/// ActionButton Class
+///
+/// A custom button based on [ElevatedButton]. This button is a
+/// shared widget designed for performing actions within the application
 class ActionButton extends StatelessWidget {
+  /// Constructor of ActionButton.
+  ///
+  /// Parameters:
+  /// - [onPressed]: A callback function to be executed when the button is pressed.
+  /// - [text]: The text string displayed on the button.
   const ActionButton({
     super.key,
     required this.onPressed,

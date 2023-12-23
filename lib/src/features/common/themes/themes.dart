@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// AppTheme Class
+///
+/// A class that defines the overall theme for the Flutter application.
+/// It includes specifications for color schemes and text themes.
 class AppTheme {
   static final ThemeData _theme = ThemeData(
     colorScheme: ColorScheme.fromSeed(

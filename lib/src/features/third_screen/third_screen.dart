@@ -6,6 +6,19 @@ import 'package:suitmedia_application_test/src/features/common/widgets/loading_i
 import 'package:suitmedia_application_test/src/features/third_screen/widgets/error_dialog.dart';
 import 'package:suitmedia_application_test/src/features/third_screen/widgets/profile_tile.dart';
 
+/// ThirdScreen Class
+///
+/// The third screen of the application according to the task requirements, that is:
+///   a. a. It has a List / Table view of Users
+///   b. Collect data from api from regres.in with email, first_name,
+///      last_name & avatar
+///   c. Add a pull to refresh and load the next page when scrolling to the
+///      bottom of the list, and prepare an empty state if data is empty.
+///      You can use the API with adding parameter page & per_page to get
+///      next page data.
+///   d. When a User on an item list is clicked, the "Selected User Name" label
+///      in [SecondScreen] will be replaced by the selected User’s name
+///      (don’t create a new screen, just continue the current screen).
 class ThirdScreen extends StatefulWidget {
   const ThirdScreen({Key? key}) : super(key: key);
 
@@ -20,6 +33,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
   late bool _isBottomLoading;
   late bool _bottomLoadingError;
   late int _pageNumber;
+  late int _perPageNumber;
   late List<User> _userProfiles;
 
   @override
@@ -34,6 +48,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
     super.initState();
   }
 
+  /// Loads initial data from the [UserService].
   Future<void> _loadData() async {
     if (_isLoading || _isBottomLoading) {
       return;
@@ -46,7 +61,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
     try {
       final List<User> newData = await _userService.fetchData(
         page: _pageNumber,
-        perPage: 10,
+        perPage: _perPageNumber,
       );
 
       setState(() {
@@ -71,6 +86,8 @@ class _ThirdScreenState extends State<ThirdScreen> {
     }
   }
 
+  /// Listens to the scroll position to trigger the loading of
+  /// more data when reaching the bottom.
   void _scrollListener() {
     if (!_isLoading &&
         !_isBottomLoading &&
@@ -81,6 +98,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
     }
   }
 
+  /// Loads additional data when reaching the bottom of the list.
   Future<void> _loadBottomData() async {
     setState(() {
       _isBottomLoading = true;
@@ -90,7 +108,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
     try {
       final List<User> newData = await _userService.fetchData(
         page: _pageNumber,
-        perPage: 10,
+        perPage: _perPageNumber,
       );
 
       setState(() {

@@ -3,7 +3,19 @@ import 'package:suitmedia_application_test/src/features/common/widgets/action_bu
 import 'package:suitmedia_application_test/src/features/common/widgets/custom_appbar.dart';
 import 'package:suitmedia_application_test/src/features/third_screen/third_screen.dart';
 
+/// SecondScreen Class
+///
+/// The second screen of the application according to the task requirements, that is:
+///   a. It has a static “Welcome” text label/textview
+///   b. And it has two dynamic labels / textviews for the show name from the
+///      first screen and the other one is the Selected User Name label.
+///   c. It has a button “Choose a User”.
+///   d. Action click button “Choose a User” for goto third screen.
 class SecondScreen extends StatefulWidget {
+  /// Constructor for `SecondScreen`.
+  ///
+  /// Parameters:
+  ///   - `name`: The name of the user passed from the [FirstScreen].
   const SecondScreen({
     super.key,
     required this.name,
@@ -18,6 +30,7 @@ class SecondScreen extends StatefulWidget {
 class _SecondScreenState extends State<SecondScreen> {
   String? _selectedUserName;
 
+   /// Callback function triggered when the user chooses a user in the [ThirdScreen].
   void submitChooseUser(BuildContext context) async {
     final String? returnedUserName = await Navigator.of(context).push(
       MaterialPageRoute(

@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 
+/// CenteredAppBar Class
+///
+/// A custom widget based on [AppBar] with centered title text and
+/// a back button. This app bar is designed to be used as the top navigation bar
+/// in the application screen.
 class CenteredAppBar extends StatelessWidget implements PreferredSizeWidget {
+  /// Constructor of CenteredAppBar.
+  ///
+  /// Parameters:
+  /// - [onPressed]: A callback function to be executed when the back button is pressed.
+  /// - [title]: The text displayed as the title of the app bar.
   const CenteredAppBar({
     super.key,
     required this.onPressed,

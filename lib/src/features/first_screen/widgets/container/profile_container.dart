@@ -1,6 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+/// ProfileContainer Class
+///
+/// The `ProfileContainer` feature-specific widget of a profile container
+/// with glass effect based on [CircularProgressIndicator].
 class ProfileContainer extends StatelessWidget {
   const ProfileContainer({super.key});
 
