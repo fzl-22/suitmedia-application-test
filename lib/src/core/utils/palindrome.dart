@@ -10,9 +10,10 @@ class Palindrome {
   ///
   /// Returns `true` if the string is a palindrome, and `false` otherwise.
   static bool isPalindrome(String text) {
-    int length = text.length;
+    String ignoredSpaceText = text.replaceAll(" ", "");
+    int length = ignoredSpaceText.length;
     for (int i = 0; i < length / 2; i++) {
-      if (text[i] != text[length - i - 1]) {
+      if (ignoredSpaceText[i] != ignoredSpaceText[length - i - 1]) {
         return false;
       }
     }
