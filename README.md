@@ -52,6 +52,8 @@ flutter build apk --release
 
 When the build completed, the release apk can be located at [build/app/outputs/flutter-apk/app-release.apk](build/app/outputs/flutter-apk/app-release.apk).
 
+The application is ready to be installed on physical device.
+
 ## 3 Screenshots
 
 The screenshots of the applications is provided according to the application flow.
