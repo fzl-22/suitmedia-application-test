@@ -16,7 +16,7 @@ The development environment for this application can be recreated using the foll
 avdmanager create avd --force --name Pixel_7_Pro --abi google_apis_playstore/x86_64 --package "system-images;android-34;google_apis_playstore;x86_64" --device 30
 ```
 
-## How to run this project
+## 1 How to run this project
 
 Clone the repository:
 
@@ -42,7 +42,7 @@ Make sure to connect to the Android device, then run the project:
 flutter run
 ```
 
-## How to build this project
+## 2 How to build this project
 
 To build this application in release mode, run this following command:
 
@@ -52,67 +52,67 @@ flutter build apk --release
 
 When the build completed, the release apk can be located at [build/app/outputs/flutter-apk/app-release.apk](build/app/outputs/flutter-apk/app-release.apk).
 
-## Screenshots
+## 3 Screenshots
 
 The screenshots of the applications is provided according to the application flow.
 
-### 1 First Screen
+### 3.1 First Screen
 
 ![](./assets/screenshots/1-first-screen.jpg)
 
-### 2 First Screen - Palindrome Input - "step on no pets"
+### 3.2 First Screen - Palindrome Input - "step on no pets"
 
 ![](./assets/screenshots/2-first-screen-step-on-no-pets-palindrome.jpg)
 
-### 3 First Screen - Palindrome Result - "step in no pets"
+### 3.3 First Screen - Palindrome Result - "step in no pets"
 
 ![](./assets/screenshots/3-first-screen-pets-on-no-pets-result.jpg)
 
-### 4 First Screen - Palindrome Input - "suitmedia"
+### 3.4 First Screen - Palindrome Input - "suitmedia"
 
 ![](./assets/screenshots/4-first-screen-suitmedia-palindrome.jpg)
 
-### 5 First Screen - Palindrome Result - "suitmedia"
+### 3.5 First Screen - Palindrome Result - "suitmedia"
 
 ![](./assets/screenshots/5-first-screen-suitmedia-result.jpg)
 
-### 6 First Screen - Name - "John Doe"
+### 3.6 First Screen - Name - "John Doe"
 
 ![](./assets/screenshots/6-first-screen-john-doe-name.jpg)
 
-### 7 Second Screen
+### 3.7 Second Screen
 
 ![](./assets/screenshots/7-second-screen.jpg)
 
-### 8 Third Screen
+### 3.8 Third Screen
 
 ![](./assets/screenshots/8-third-screen.jpg)
 
-### 9 Third Screen - Pull to Refresh
+### 3.9 Third Screen - Pull to Refresh
 
 ![](./assets/screenshots/9-third-screen-pull-to-refresh.jpg)
 
-### 10 Third Screen - Infinite Scroll Pagination
+### 3.10 Third Screen - Infinite Scroll Pagination
 
 ![](./assets/screenshots/10-third-screen-infinite-scroll-pagination.jpg)
 
-### 11 Third Screen - Network Error
+### 3.11 Third Screen - Network Error
 
 ![](./assets/screenshots/11-third-screen-network-error.jpg)
 
-### 12 Third Screen - No Data Fetched
+### 3.12 Third Screen - No Data Fetched
 
 ![](./assets/screenshots/12-third-screen-no-data-fetched.jpg)
 
-### 13 Third Screen - Network Error on Bottom Loading 
+### 3.13 Third Screen - Network Error on Bottom Loading 
 
 ![](./assets/screenshots/13-third-screen-network-error-bottom-loading.jpg)
 
-### 14 Second Screen - Selected User
+### 3.14 Second Screen - Selected User
 
 ![](./assets/screenshots/14-second-screen-selected-user.jpg)
 
-### 15 Miscellaneous
+### 3.15 Miscellaneous
 
 These 2 screenshots show the validation if the button is pressed but the related input field input field is empty.
 
