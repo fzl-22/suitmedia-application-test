@@ -129,6 +129,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
     }
   }
 
+  /// Build each of UserContainer for ListView.separator
   Widget _buildUserContainer(User user) {
     return UserContainer(
       user: user,
@@ -164,8 +165,21 @@ class _ThirdScreenState extends State<ThirdScreen> {
           child: _isLoading && _userProfiles.isEmpty
               ? const CenteredLoadingIndicator()
               : _userProfiles.isEmpty
-                  ? const Center(
-                      child: Text("Sorry, no data available"),
+                  ? LayoutBuilder(
+                      builder: (context, constraints) {
+                        return ListView(
+                          children: [
+                            Container(
+                              constraints: BoxConstraints(
+                                minHeight: constraints.maxHeight,
+                              ),
+                              child: const Center(
+                                child: Text("Sorry, no data available"),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
                     )
                   : ListView.separated(
                       controller: _scrollController,
@@ -174,8 +188,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
                         if (index < _userProfiles.length) {
                           return _buildUserContainer(_userProfiles[index]);
                         } else if (_bottomLoadingError) {
-                          return const Center(
-                            child: Text("Error loading more data."),
+                          return Center(
+                            child: TextButton(
+                              onPressed: _loadBottomData,
+                              child: const Text("Error loading more data."),
+                            ),
                           );
                         } else {
                           return const CenteredLoadingIndicator();
