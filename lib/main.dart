@@ -6,6 +6,7 @@ import 'package:suitmedia_application_test/src/app.dart';
 ///
 /// The entry point of the application.
 void main() {
+  /// Lock device orientations to portrait
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
