@@ -31,7 +31,7 @@ class _SecondScreenState extends State<SecondScreen> {
   String? _selectedUserName;
 
    /// Callback function triggered when the user chooses a user in the [ThirdScreen].
-  void submitChooseUser(BuildContext context) async {
+  void onSubmitChooseUser(BuildContext context) async {
     final String? returnedUserName = await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const ThirdScreen(),
@@ -77,7 +77,7 @@ class _SecondScreenState extends State<SecondScreen> {
             ),
             ActionButton(
               onPressed: () {
-                submitChooseUser(context);
+                onSubmitChooseUser(context);
               },
               text: "Choose a User",
             ),
