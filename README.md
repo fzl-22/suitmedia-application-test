@@ -54,6 +54,8 @@ When the build completed, the release apk can be located at [build/app/outputs/f
 
 The application is ready to be installed on physical device.
 
+Or, the release apk can be downloaded [here](https://github.com/fzl-22/suitmedia-application-test/releases).
+
 ## 3 Screenshots
 
 The screenshots of the applications is provided according to the application flow.
